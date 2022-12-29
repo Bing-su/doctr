@@ -36,7 +36,7 @@ class RecognitionDataset(AbstractDataset):
         super().__init__(img_folder, **kwargs)
 
         self.data: List[Tuple[str, str]] = []
-        with open(labels_path) as f:
+        with open(labels_path, "rb") as f:
             labels = json.load(f)
 
         for img_name, label in labels.items():

@@ -83,7 +83,7 @@ def _save_model_and_config_for_hf_hub(model: Any, save_dir: str, arch: str, task
     model_config["arch"] = arch
     model_config["task"] = task
 
-    with config_path.open("w") as f:
+    with config_path.open("w", encoding="utf-8") as f:
         json.dump(model_config, f, indent=2, ensure_ascii=False)
 
 
